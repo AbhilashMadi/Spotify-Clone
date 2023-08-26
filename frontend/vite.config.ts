@@ -11,7 +11,9 @@ export default defineConfig({
       "@sections": path.resolve(__dirname, "./src/components/sections/index.ts"),
       "@atoms": path.resolve(__dirname, "./src/components/atoms/index.ts"),
       "@common": path.resolve(__dirname, "./src/components/common/index.ts"),
-      "@routes": path.resolve(__dirname,"./src/routes/routes.ts"),
+      "@routes": path.resolve(__dirname, "./src/routes/routes.ts"),
+      "@assets": path.resolve(__dirname, "./src/assets/assets.ts"),
+      "@labels": path.resolve(__dirname, "./src/constants/labels.ts"),
     },
   },
 })

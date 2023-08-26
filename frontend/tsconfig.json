@@ -40,6 +40,12 @@
       ],
       "@routes": [
         "./src/routes/routes.ts",
+      ],
+      "@assets": [
+        "./src/assets/assets.ts",
+      ],
+      "@labels": [
+        "./src/constants/labels.ts",
       ]
     },
   },

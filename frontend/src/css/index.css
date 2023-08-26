@@ -12,13 +12,13 @@
 
 @layer base {
   :root {
-    /* --background: 0 0% 100%; */
-    --background: 0 0% 7%;
-    /* --foreground: 240 10% 3.9%; */
-    --foreground: 0 0% 100%;
+    --background: 0 0% 100%;
+    /* --background: 0 0% 7%; */
+    --foreground: 240 10% 3.9%;
+    /* --foreground: 0 0% 100%; */
 
-    /* --card: 0 0% 100%; */
-    --card: 129 59% 50%;
+    --card: 0 0% 100%;
+    /* --card: 129 59% 50%; */
     --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
@@ -44,6 +44,8 @@
     --ring: 240 10% 3.9%;
 
     --radius: 0.5rem;
+
+    --bg-card: 129 59% 50%;
   }
 
   .dark {
