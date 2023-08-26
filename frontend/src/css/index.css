@@ -1,6 +1,11 @@
+/* Fonts */
+@import url('./fonts.css');
+
+/* Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
  
 @layer base {
   :root {
