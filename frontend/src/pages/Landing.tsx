@@ -1,8 +1,11 @@
 import { FC } from 'react';
+import { Hero } from '@sections';
 
 const Landing: FC = () => {
   return (
-    <div>Landing</div>
+    <>
+      <Hero />
+    </>
   )
 }
 

@@ -46,6 +46,9 @@
       ],
       "@labels": [
         "./src/constants/labels.ts",
+      ],
+      "@context/*": [
+        "./src/context/*",
       ]
     },
   },

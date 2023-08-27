@@ -1,8 +1,11 @@
+import { headline } from '@labels';
 import { FC } from 'react';
 
 const Footer: FC = () => {
   return (
-    <div>Footer</div>
+    <p className='text-sm bg-gradient-to-r from-green-600 to-green-400 p-5 text-center'>
+        {headline.footerCopyright} &copy;{new Date().getFullYear()}
+      </p>
   )
 }
 
