@@ -50,8 +50,8 @@
       "@context/*": [
         "./src/context/*",
       ],
-      "@services": [
-        "./src/services/services.ts",
+      "@services/*": [
+        "./src/services/*",
       ]
     },
   },

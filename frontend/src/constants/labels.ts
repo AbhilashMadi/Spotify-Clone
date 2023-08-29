@@ -7,6 +7,10 @@ export const placeholder = {
   searchASong: 'Search a album of your choice',
 }
 
+export const labels = {
+  follows: 'Follows',
+}
+
 export const headline = {
   heroHeadline: '100 Thousand Songs, ad-free\n Over thousands podcast episodes',
   footerCopyright: 'Qtify All rights reserved'

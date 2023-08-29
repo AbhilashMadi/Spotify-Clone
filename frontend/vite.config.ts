@@ -15,7 +15,7 @@ export default defineConfig({
       "@assets": path.resolve(__dirname, "./src/assets/assets.ts"),
       "@labels": path.resolve(__dirname, "./src/constants/labels.ts"),
       "@context": path.resolve(__dirname,"./src/context"),
-      "@services": path.resolve(__dirname, "./src/services/services.ts"),
+      "@services": path.resolve(__dirname, "./src/services"),
     },
   },
 })

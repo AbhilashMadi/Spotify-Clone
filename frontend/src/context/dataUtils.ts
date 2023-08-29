@@ -1,31 +1,29 @@
 import { useContext } from 'react';
 import { AppContext } from './ContextProvider';
 
-export type Action = { type: ActionType.INCREMENT } | { type: ActionType.DECREMENT };
+export type Action = { type: ActionType.FETCH_TOP_ALBUMS, payload: unknown };
 
 export type State = {
-  count: number;
+  topAlbums: unknown;
 };
 
 export enum ActionType {
-  INCREMENT = 'INCREMENT',
-  DECREMENT = 'DECREMENT',
+  FETCH_TOP_ALBUMS = 'FETCH_TOP_ALBUMS',
 }
 
 export const reducer = (state: State, action: Action): State => {
+
   switch (action.type) {
-    case ActionType.INCREMENT:
-      return { ...state, count: state.count + 1 };
-    case ActionType.DECREMENT:
-      return { ...state, count: state.count - 1 };
+    case ActionType.FETCH_TOP_ALBUMS:
+      return { ...state, topAlbums: action.payload }
     default:
       return state;
   }
 };
 
-export function useData(){
+export function useData() {
   const context = useContext(AppContext);
-  if(context === undefined){
+  if (context === undefined) {
     throw new Error('useData must be used within ContextProvider');
   }
 

@@ -9,7 +9,7 @@ interface ContextValue {
 }
 
 const initialState: State = {
-  count: 0,
+  topAlbums: [],
 };
 
 const AppContext = createContext<ContextValue | undefined>(undefined);
