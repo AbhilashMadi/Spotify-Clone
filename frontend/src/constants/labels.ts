@@ -9,6 +9,9 @@ export const placeholder = {
 
 export const labels = {
   follows: 'Follows',
+  showAll: 'Show All',
+  collapse: 'Collapse',
+  topAlbums: 'Top Albums',
 }
 
 export const headline = {

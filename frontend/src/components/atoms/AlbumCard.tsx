@@ -1,9 +1,11 @@
 import { FC } from 'react';
 import { labels } from '@labels';
+import { Badge } from '@ui/badge';
+import { classes } from '@/css/classes';
 
 interface IAlbumCard {
   imgUrl: string;
-  follows: string;
+  follows: number;
   albumTitle: string;
 }
 
@@ -11,15 +13,15 @@ const AlbumCard: FC<IAlbumCard> = (props) => {
   const { imgUrl, follows, albumTitle } = props;
 
   return (
-    <>
-      <div className='w-[160px] h-[205px] flex flex-col'>
-        <div className={`w-[160px] h-[170px] bg-white bg-[url(${imgUrl})]`} />
-        <div className='rounded-full bg-background'>
-          {follows} {labels.follows}
+    <div className='flex flex-col space-y-1 cursor-pointer'>
+      <div className='w-[160px] h-[205px] flex flex-col bg-white rounded-md'>
+        <div className={`w-[160px] h-[170px] rounded-t-md ${classes.bgImg}`} style={{ backgroundImage: `url(${imgUrl})` }} />
+        <div className='text-xs mx-auto p-2'>
+          <Badge className='font-light'>{labels.follows}: {follows}</Badge>
         </div>
       </div>
-      {albumTitle}
-    </>
+      <p className='text-sm'>{albumTitle}</p>
+    </div>
   )
 }
 
