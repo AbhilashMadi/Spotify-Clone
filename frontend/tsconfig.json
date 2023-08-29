@@ -56,9 +56,6 @@
       "@types": [
         "./src/types/types.ts",
       ],
-      "@classes": [
-        "./src/css/classes.ts",
-      ]
     },
   },
   "include": [
