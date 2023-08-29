@@ -8,7 +8,7 @@ const Hero: FC = () => {
       <p className='text-white scroll-m-20 pb-2 text-sm sm:text-3xl font-semibold tracking-tight my-auto transition-colors sm:w-[35%]'>
         {headline.heroHeadline}
       </p>
-      <img src={headset} alt='Headset' className='h-auto'/>
+      <img src={headset} alt='Headset' className='h-auto' loading='lazy' />
     </section>
   )
 }

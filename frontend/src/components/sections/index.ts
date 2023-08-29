@@ -6,3 +6,4 @@ export { default as FeedbackForm } from './FeedbackForm';
 export { default as Hero } from './Hero';
 export { default as SongsTable } from './SongsTable';
 export { default as AlbumsCollapse } from './AlbumsCollapse';
+export { default as AlbumsCarousel } from './AlbumsCarousel';

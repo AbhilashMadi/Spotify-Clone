@@ -1,0 +1,13 @@
+
+.swiper{
+  @apply relative;
+}
+
+.swiper-button-next,
+.swiper-button-prev{
+  @apply bg-green-500 text-sm w-9 h-9 rounded-full font-bold absolute;
+  @apply flex justify-center align-middle;
+  @apply transform -translate-y-1/2;
+  --swiper-navigation-size: 1rem;
+  --swiper-theme-color: #FFF;
+}
