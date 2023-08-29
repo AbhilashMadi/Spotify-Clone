@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
 import { Hero } from '@sections';
-import { AlbumCard } from '@atoms';
+// import { AlbumCard } from '@atoms';
 import { useData, ActionType } from '@context/dataUtils';
 import { fetchTopAlbums } from '@services/requests';
 
