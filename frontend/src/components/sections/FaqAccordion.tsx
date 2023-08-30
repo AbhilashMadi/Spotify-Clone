@@ -10,23 +10,23 @@ import { TFaqQestion } from '@types';
 const FaqAccordion: FC = () => {
   const faqQuestion: TFaqQestion[] = [
     {
-      question: 'Is it accessible?',
-      answer: 'Yes. It adheres to the WAI-ARIA design pattern.',
+      question: 'What is Qtify, and how does it work?',
+      answer: 'Qtify is a music streaming application that allows you to listen to your favorite music anytime, anywhere. Simply sign up, browse our extensive music library, and start enjoying your favorite tunes',
       value: 'item-1',
     },
     {
-      question: 'Is it accessible?',
-      answer: 'Yes. It adheres to the WAI-ARIA design pattern.',
+      question: 'Is Qtify available on multiple devices?',
+      answer: 'Yes! Qtify is available on various devices, including smartphones, tablets, and desktop computers. We offer apps for iOS, Android, and a web version for other devices.',
       value: 'item-2',
     },
     {
-      question: 'Is it accessible?',
-      answer: 'Yes. It adheres to the WAI-ARIA design pattern.',
+      question: 'Can I listen to music offline?',
+      answer: 'No! Qtify doesn\'t offers an offline mode. Albums, or playlists are accessible when you\'re connected to the internet, and you can enjoy them without lag.',
       value: 'item-3',
     },
     {
-      question: 'Is it accessible?',
-      answer: 'Yes. It adheres to the WAI-ARIA design pattern.',
+      question: 'Can I download and listen to songs offline?',
+      answer: 'Sorry, unfortunately we don\'t provide the service to download any songs.',
       value: 'item-4',
     },
   ]
