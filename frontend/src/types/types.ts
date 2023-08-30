@@ -27,3 +27,9 @@ export type TGenreObj = {
   key: string;
   songs: TSongObj[];
 }
+
+export type TFaqQestion = {
+  question: string;
+  answer: string;
+  value: string;
+}

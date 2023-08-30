@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { AlbumCard } from '@atoms';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import '../../css/swiper.css'
+import '../../css/swiper_navigation.css';
 
 import { Navigation } from 'swiper/modules';
 
@@ -47,7 +47,7 @@ const AlbumsCarousel: FC<IAlbumsCarousel> = (props) => {
             <AlbumCard
               isSong={isSong}
               albumTitle={obj?.title}
-              follows={isSong ? obj?.likes : obj?.follows}
+              follows={isSong ? (obj as TSongObj)?.likes : (obj as TAlbum)?.follows}
               imgUrl={obj?.image}
             />
           </SwiperSlide>
