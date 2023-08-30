@@ -1,5 +1,5 @@
 import { FC, createContext, ReactNode, useReducer, Dispatch } from 'react';
-import { State, Action, reducer } from './dataUtils';
+import { State, Action, reducer, initialState } from '@context/dataUtils';
 import { useNavigate } from 'react-router-dom';
 
 interface ContextValue {
@@ -7,10 +7,6 @@ interface ContextValue {
   dispatch: Dispatch<Action>,
   navigateToRoute: (path: string) => void,
 }
-
-const initialState: State = {
-  topAlbums: [],
-};
 
 const AppContext = createContext<ContextValue | undefined>(undefined);
 
