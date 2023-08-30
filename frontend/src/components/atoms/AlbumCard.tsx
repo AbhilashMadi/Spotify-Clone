@@ -6,10 +6,11 @@ interface IAlbumCard {
   imgUrl: string;
   follows: number;
   albumTitle: string;
+  isSong?: boolean;
 }
 
 const AlbumCard: FC<IAlbumCard> = (props) => {
-  const { imgUrl, follows, albumTitle } = props;
+  const { imgUrl, follows, albumTitle, isSong = false } = props;
 
   return (
     <div className='flex flex-col space-y-1 cursor-pointer'>
@@ -19,7 +20,7 @@ const AlbumCard: FC<IAlbumCard> = (props) => {
           <img src={imgUrl} alt="" className="hidden" loading="lazy" />
         </div>
         <div className='text-xs mx-auto p-2'>
-          <Badge className='font-light'>{labels.follows}: {follows}</Badge>
+          <Badge className='font-light'>{isSong ? labels.likes : labels.follows}: {follows}</Badge>
         </div>
       </div>
       <p className='text-sm'>{albumTitle}</p>

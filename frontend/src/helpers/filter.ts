@@ -1,5 +1,5 @@
 import { TSongObj } from '@types';
 
-export function fitlerSongs(key: string):TSongObj[]{
-  return key;
+export function filterSongs(key: string, songs: TSongObj[]): TSongObj[] {
+  return songs.filter((songObj: TSongObj) => songObj.genre.key === key);
 }

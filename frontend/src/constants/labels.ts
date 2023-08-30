@@ -18,6 +18,8 @@ export const labels = {
   jazz: 'Jazz',
   blues: 'Blues',
   pop: 'Pop',
+  songs: 'Songs',
+  likes: 'Likes',
 }
 
 export const headline = {

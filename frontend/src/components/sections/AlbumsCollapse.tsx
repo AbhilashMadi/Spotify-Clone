@@ -4,7 +4,7 @@ import { Button } from '@ui/button';
 import { labels } from '@labels';
 import { AlbumCard } from '@atoms';
 import { TAlbum } from '@types';
-import { AlbumCarousel } from '@sections';
+import { AlbumsCarousel } from '@sections';
 
 interface IAlbumsCollapse {
   title: string;
@@ -31,14 +31,15 @@ const AlbumsCollapse: FC<IAlbumsCollapse> = (props) => {
           </Button>
         </CollapsibleTrigger>
       </div>
-      {!isOpen && <AlbumCarousel data={data} />}
+      {!isOpen && <AlbumsCarousel data={data} />}
       <CollapsibleContent className='flex flex-wrap gap-9'>
         {data?.map((album: TAlbum) => {
           return <AlbumCard
             key={album?.id}
             albumTitle={album?.title}
             follows={album?.follows}
-            imgUrl={album?.image} />
+            imgUrl={album?.image} 
+            />
         })}
       </CollapsibleContent>
     </Collapsible>

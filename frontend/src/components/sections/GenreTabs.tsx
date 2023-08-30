@@ -1,36 +1,58 @@
 import { FC } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@ui/tabs';
-import { TGenreObj, TSongObj, TAlbum } from '@types';
+import { TGenreObj } from '@types';
 import { keys, labels } from '@labels';
+import { useData } from '@context/dataUtils';
+import { filterSongs } from '@helpers/filter';
+import { AlbumsCarousel } from '@sections';
 
-interface IGenreTabs {
-  albums: TAlbum[];
-}
+const GenreTabs: FC = () => {
+  const { state: { songs } } = useData();
 
-const GenreTabs: FC<IGenreTabs> = (props) => {
-  const { albums } = props;
+  console.log(songs[0]);
 
-  // const genres: TGenreObj[] = [
-  //   {
-  //     label: labels.all,
-  //     key: keys.all,
-  //     songs: [],
-  //   },
-  // ]
-  
+  const genres: TGenreObj[] = [
+    {
+      label: labels.all,
+      key: keys.all,
+      songs: songs.slice(0, 50),
+    },
+    {
+      label: labels.blues,
+      key: keys.blue,
+      songs: filterSongs(keys.blue, songs).slice(0,50),
+    },
+    {
+      label: labels.jazz,
+      key: keys.jazz,
+      songs: filterSongs(keys.jazz, songs).slice(0, 50),
+    },
+    {
+      label: labels.pop,
+      key: keys.pop,
+      songs: filterSongs(keys.pop, songs).slice(0, 50),
+    },
+    {
+      label: labels.rock,
+      key: keys.rock,
+      songs: filterSongs(keys.rock, songs).slice(0, 50),
+    }
+  ]
+
   return (
-    <div className='container text-white'>
-      <Tabs defaultValue="account" className="w-[400px]">
-        <TabsList className="grid w-full grid-cols-2">
-          <TabsTrigger value="account">Account</TabsTrigger>
-          <TabsTrigger value="password">Password</TabsTrigger>
+    <div className='container text-white '>
+      <p className='font-semibold text-green-500 text-lg my-8'>{labels.songs}</p>
+      <Tabs defaultValue={keys.all} className="">
+        <TabsList className='bg-gradient-to-r from-green-500 to-green-600 text-primary mb-4'>
+          {genres.map((obj: TGenreObj) => {
+            return <TabsTrigger key={obj.key} value={obj.key}>{obj.label}</TabsTrigger>
+          })}
         </TabsList>
-        <TabsContent value="account">
-          Account
-        </TabsContent>
-        <TabsContent value="password">
-          Password
-        </TabsContent>
+        {genres.map((obj: TGenreObj) => {
+          return <TabsContent key={obj?.key} value={obj.key}>
+            <AlbumsCarousel data={obj?.songs} isSong />
+          </TabsContent>
+        })}
       </Tabs>
     </div>
   )

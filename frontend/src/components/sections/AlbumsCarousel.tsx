@@ -1,4 +1,4 @@
-import { TAlbum } from '@/types/types';
+import { TAlbum, TSongObj } from '@/types/types';
 import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { AlbumCard } from '@atoms';
@@ -9,11 +9,12 @@ import '../../css/swiper.css'
 import { Navigation } from 'swiper/modules';
 
 interface IAlbumsCarousel {
-  data: TAlbum[];
+  data: TAlbum[] | TSongObj[];
+  isSong?: boolean;
 }
 
 const AlbumsCarousel: FC<IAlbumsCarousel> = (props) => {
-  const { data } = props;
+  const { data, isSong = false } = props;
 
   return (
     <>
@@ -41,11 +42,14 @@ const AlbumsCarousel: FC<IAlbumsCarousel> = (props) => {
           },
         }}
       >
-        {data.map((album: TAlbum) => {
-          return <SwiperSlide key={album?.id}>
-            <AlbumCard albumTitle={album?.title}
-              follows={album?.follows}
-              imgUrl={album?.image} />
+        {data.map((obj: TAlbum | TSongObj) => {
+          return <SwiperSlide key={obj?.id}>
+            <AlbumCard
+              isSong={isSong}
+              albumTitle={obj?.title}
+              follows={isSong ? obj?.likes : obj?.follows}
+              imgUrl={obj?.image}
+            />
           </SwiperSlide>
         })}
       </Swiper>
