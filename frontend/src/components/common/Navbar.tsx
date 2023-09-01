@@ -1,13 +1,20 @@
-import { FC } from 'react';
-import { logo, searchIcon } from '@assets';
+import { FC, useState } from 'react';
+import { logo } from '@assets';
 import { Button } from '@ui/button';
 import { Input } from '@ui/input';
-import { btnLabel, placeholder } from '@labels';
+import { placeholder } from '@labels';
 import { Paths } from '@routes';
 import { useData } from '@context/dataUtils';
+import { FeedbackForm } from '@forms';
+import { Search } from 'lucide-react';
 
 const Navbar: FC = () => {
+  const [openModal, setOpenModal] = useState<boolean>(false);
   const { navigateToRoute } = useData();
+
+  const handleModal = (): void => {
+    setOpenModal(!openModal);
+  }
 
   return (
     <header className='bg-gradient-to-r from-green-600 to-green-400 flex justify-between py-6 px-2 md:px-8 space-x-2'>
@@ -19,13 +26,11 @@ const Navbar: FC = () => {
         <Button type='submit'
           className='rounded-s-none'
           variant='outline'>
-          <img src={searchIcon} alt='search icon' className='h-4 w-4' />
+          <Search className='h-4 l-4' />
         </Button>
       </div>
       <div>
-        <Button>
-          {btnLabel.feedback}
-        </Button>
+        <FeedbackForm openModal={openModal} handleModal={handleModal} />
       </div>
     </header>
   )

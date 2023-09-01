@@ -3,3 +3,7 @@
   width: 100%;
   @apply bg-slate-950;
 }
+
+::selection{
+  @apply bg-green-500 text-white;
+}

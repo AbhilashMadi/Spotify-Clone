@@ -20,6 +20,14 @@ export const labels = {
   pop: 'Pop',
   songs: 'Songs',
   likes: 'Likes',
+  faqs: 'FAQS',
+  submit: 'Submit',
+  fullName: 'Full name',
+  emailId: 'Email ID',
+  subject: 'Subject',
+  description: 'Description',
+  pleaseProvideFeedback: 'Please provide your feedback to improve our application.',
+  feedbackForm: 'Feedback Form',
 }
 
 export const headline = {

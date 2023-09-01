@@ -58,6 +58,9 @@
       ],
       "@helpers/*": [
         "./src/helpers/*",
+      ],
+      "@forms": [
+        "./src/components/forms/index.ts",
       ]
     },
   },
