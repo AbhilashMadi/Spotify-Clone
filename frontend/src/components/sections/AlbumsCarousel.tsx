@@ -4,7 +4,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { AlbumCard } from '@atoms';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import '../../css/swiper_navigation.css';
+import '@css/swiper_navigation.css';
+import { randomId } from '@helpers/uniq';
 
 import { Navigation } from 'swiper/modules';
 
@@ -43,7 +44,7 @@ const AlbumsCarousel: FC<IAlbumsCarousel> = (props) => {
         }}
       >
         {data.map((obj: TAlbum | TSongObj) => {
-          return <SwiperSlide key={obj?.id}>
+          return <SwiperSlide key={randomId()}>
             <AlbumCard
               isSong={isSong}
               albumTitle={obj?.title}

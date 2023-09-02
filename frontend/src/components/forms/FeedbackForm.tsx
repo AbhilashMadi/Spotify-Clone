@@ -1,9 +1,10 @@
-import { FC } from 'react';
+import { FC, useState, ChangeEvent, FormEvent } from 'react';
 import { Button } from '@ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@ui/dialog';
 import { btnLabel, labels } from '@/constants/labels';
 import { Input } from '@ui/input';
 import { Textarea } from '@ui/textarea';
+// import { useToast } from '@ui/toast';
 
 interface IFeedbackForm {
   openModal: boolean;
@@ -12,6 +13,33 @@ interface IFeedbackForm {
 
 const FeedbackForm: FC<IFeedbackForm> = (props) => {
   const { openModal = false, handleModal } = props;
+  const [formValues, setFormValues] = useState({
+    fullName: "",
+    emailId: "",
+    subject: "",
+    message: "",
+  });
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormValues((pre) => ({ ...pre, [name]: value }))
+  }
+
+  const handleTextAreaChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormValues((pre) => ({ ...pre, [name]: value }))
+  }
+
+  const handleformSubmit = (e: FormEvent<HTMLFormElement>): void => {
+    e.preventDefault();
+    setFormValues({
+      fullName: "",
+      emailId: "",
+      subject: "",
+      message: "",
+    })
+    console.log(formValues);
+  }
 
   return (
     <Dialog open={openModal} onOpenChange={handleModal}>
@@ -25,11 +53,11 @@ const FeedbackForm: FC<IFeedbackForm> = (props) => {
             {labels.pleaseProvideFeedback}
           </DialogDescription>
         </DialogHeader>
-        <form className='flex flex-col gap-4'>
-          <Input placeholder='Full Name' />
-          <Input placeholder='Email ID' />
-          <Input placeholder='Subject' />
-          <Textarea placeholder='Message'/>
+        <form className='flex flex-col gap-4' onSubmit={handleformSubmit}>
+          <Input placeholder='Full Name' name="fullName" onChange={handleInputChange} />
+          <Input placeholder='Email ID' name="emailId" onChange={handleInputChange} />
+          <Input placeholder='Subject' name="subject" onChange={handleInputChange} />
+          <Textarea placeholder='Message' name="message" onChange={handleTextAreaChange} />
           <DialogFooter>
             <Button type='submit' className='bg-green-500' onClick={handleModal}>{labels.submit}</Button>
           </DialogFooter>

@@ -19,6 +19,7 @@ export default defineConfig({
       "@types": path.resolve(__dirname, "./src/types/types.ts"),
       "@helpers": path.resolve(__dirname, "./src/helpers"),
       "@forms": path.resolve(__dirname, "./src/components/forms/index.ts"),
+      "@css": path.resolve(__dirname,"./src/css"),
     },
   },
 })

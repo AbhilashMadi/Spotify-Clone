@@ -7,6 +7,7 @@ import {
 } from '@ui/accordion';
 import { TFaqQestion } from '@types';
 import { labels } from '@/constants/labels';
+import { randomId } from '@helpers/uniq';
 
 const FaqAccordion: FC = () => {
   const faqQuestion: TFaqQestion[] = [
@@ -37,7 +38,7 @@ const FaqAccordion: FC = () => {
       <p className='text-white text-center mb-8 text-2xl font-semibold'>{labels.faqs}</p>
       <Accordion type='single' collapsible className="text-white sm:px-20">
         {faqQuestion.map((obj: TFaqQestion) => {
-          return <AccordionItem value={obj?.value} className='bg-gradient-to-r from-white to-slate-300 mb-4 rounded-md border-[1px] border-white'>
+          return <AccordionItem key={randomId()} value={obj?.value} className='bg-gradient-to-r from-white to-slate-300 mb-4 rounded-md border-[1px] border-white'>
             <AccordionTrigger className='px-4 sm:px-10 bg-primary mb-[2px] rounded-md' >
               {obj?.question}
             </AccordionTrigger>

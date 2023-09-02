@@ -28,6 +28,8 @@ export const labels = {
   description: 'Description',
   pleaseProvideFeedback: 'Please provide your feedback to improve our application.',
   feedbackForm: 'Feedback Form',
+  feedbackTitle: 'Thank You for Your Feedback',
+  feedbackDescription: 'We appreciate your valuable input in helping us improve our services.'
 }
 
 export const headline = {

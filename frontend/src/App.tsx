@@ -3,6 +3,7 @@ import { Layout } from '@common';
 import { Route, Routes } from 'react-router-dom';
 import routes, { Paths, RouteObject } from '@routes';
 import { ContextProvider } from '@context/ContextProvider';
+import { Toast } from '@ui/toast';
 
 const App: FC = () => {
 
@@ -10,6 +11,7 @@ const App: FC = () => {
     <ContextProvider>
       <Layout>
         <Suspense fallback={<>Loading...</>}>
+          {/* <Toast /> */}
           <Routes>
             {routes.map((obj: RouteObject) => (
               <Route

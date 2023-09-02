@@ -32,14 +32,14 @@ const AlbumsCollapse: FC<IAlbumsCollapse> = (props) => {
         </CollapsibleTrigger>
       </div>
       {!isOpen && <AlbumsCarousel data={data} />}
-      <CollapsibleContent className='flex flex-wrap gap-9'>
+      <CollapsibleContent className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-4 xl:gap-9'>
         {data?.map((album: TAlbum) => {
           return <AlbumCard
             key={album?.id}
             albumTitle={album?.title}
             follows={album?.follows}
-            imgUrl={album?.image} 
-            />
+            imgUrl={album?.image}
+          />
         })}
       </CollapsibleContent>
     </Collapsible>
