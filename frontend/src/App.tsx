@@ -3,15 +3,14 @@ import { Layout } from '@common';
 import { Route, Routes } from 'react-router-dom';
 import routes, { Paths, RouteObject } from '@routes';
 import { ContextProvider } from '@context/ContextProvider';
-import { Toast } from '@ui/toast';
+import { Loader } from '@common'
 
 const App: FC = () => {
 
   return (
     <ContextProvider>
-      <Layout>
-        <Suspense fallback={<>Loading...</>}>
-          {/* <Toast /> */}
+      <Suspense fallback={<Loader />}>
+        <Layout>
           <Routes>
             {routes.map((obj: RouteObject) => (
               <Route
@@ -22,8 +21,8 @@ const App: FC = () => {
               />))}
             <Route path="/*" element={<p>404 NOT FOUND</p>} />
           </Routes>
-        </Suspense>
-      </Layout>
+        </Layout>
+      </Suspense>
     </ContextProvider>
   );
 };
