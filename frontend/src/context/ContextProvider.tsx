@@ -1,6 +1,7 @@
 import { FC, createContext, ReactNode, useReducer, Dispatch } from 'react';
 import { State, Action, reducer, initialState } from '@context/dataUtils';
 import { useNavigate } from 'react-router-dom';
+import { ToastProvider } from '@ui/toast';
 
 interface ContextValue {
   state: State;
@@ -20,7 +21,9 @@ const ContextProvider: FC<IContextProvider> = ({ children }) => {
 
   return <AppContext.Provider
     value={{ state, dispatch, navigateToRoute }}>
-    {children}
+    <ToastProvider>
+      {children}
+    </ToastProvider>
   </AppContext.Provider>;
 };
 

@@ -39,6 +39,7 @@ const AlbumsCollapse: FC<IAlbumsCollapse> = (props) => {
             albumTitle={album?.title}
             follows={album?.follows}
             imgUrl={album?.image}
+            slug={album?.slug}
           />
         })}
       </CollapsibleContent>

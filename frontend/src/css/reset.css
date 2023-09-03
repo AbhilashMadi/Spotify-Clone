@@ -7,3 +7,7 @@
 ::selection{
   @apply bg-green-500 text-white;
 }
+
+.at_page_center{
+  @apply grid place-items-center min-h-screen;
+}

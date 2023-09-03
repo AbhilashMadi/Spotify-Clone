@@ -50,6 +50,7 @@ const AlbumsCarousel: FC<IAlbumsCarousel> = (props) => {
               albumTitle={obj?.title}
               follows={isSong ? (obj as TSongObj)?.likes : (obj as TAlbum)?.follows}
               imgUrl={obj?.image}
+              slug={isSong ? undefined : (obj as TAlbum)?.slug}
             />
           </SwiperSlide>
         })}

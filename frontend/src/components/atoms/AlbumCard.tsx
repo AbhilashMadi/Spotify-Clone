@@ -1,19 +1,26 @@
 import { FC } from 'react';
 import { labels } from '@labels';
 import { Badge } from '@ui/badge';
+import { useData } from '@context/dataUtils';
 
 interface IAlbumCard {
   imgUrl: string;
   follows: number;
   albumTitle: string;
   isSong?: boolean;
+  slug?: string;
 }
 
 const AlbumCard: FC<IAlbumCard> = (props) => {
-  const { imgUrl, follows, albumTitle, isSong = false } = props;
+  const { imgUrl, follows, albumTitle, isSong = false, slug } = props;
+  const { navigateToRoute } = useData();
+
+  const handleNavigate = (): void => {
+    navigateToRoute(`/album/${slug}`)
+  }
 
   return (
-    <div className='flex flex-col space-y-1 cursor-pointer'>
+    <div className='flex flex-col space-y-1 cursor-pointer' onClick={handleNavigate}>
       <div className='w-[160px] h-[205px] flex flex-col bg-white rounded-md'>
         <div className='w-[160px] h-[170px] rounded-t-md bg_img' style={{ backgroundImage: `url(${imgUrl})` }}>
           {/* to load backgroundImage as lazy */}

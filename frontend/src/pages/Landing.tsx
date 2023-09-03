@@ -7,7 +7,7 @@ import { labels } from '@labels';
 import { Divider } from '@atoms';
 import { GenreTabs } from '@sections';
 import { keys } from '@labels';
-import { filterSongs } from '@helpers/filter';
+import { filterSongs } from '@helpers/helpers';
 import { TGenreObj } from '@types';
 
 const Landing: FC = () => {

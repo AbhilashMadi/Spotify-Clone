@@ -2,11 +2,13 @@ import { FC, lazy, LazyExoticComponent } from 'react';
 
 export enum Paths {
   LANDING = "/",
-  ALBUM = "/album/:album-id"
+  ALBUM = "/album/:albumSlug",
+  NOT_FOUND = "/*",
 }
 
 const Landing: LazyExoticComponent<FC> = lazy(() => import("../pages/Landing"));
 const Album: LazyExoticComponent<FC> = lazy(() => import('../pages/Album'));
+const NotFoundPage: LazyExoticComponent<FC> = lazy(() => import("../pages/NotFoundPage"));
 
 export type RouteObject = {
   path: string;
@@ -30,6 +32,7 @@ function routeObject(path: string, component: FC): RouteObject {
 const routes: RouteObject[] = [
   routeObject(Paths.LANDING, Landing),
   routeObject(Paths.ALBUM, Album),
+  routeObject(Paths.NOT_FOUND, NotFoundPage),
 ];
 
 export default routes;

@@ -4,7 +4,7 @@ import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, D
 import { btnLabel, labels } from '@/constants/labels';
 import { Input } from '@ui/input';
 import { Textarea } from '@ui/textarea';
-// import { useToast } from '@ui/toast';
+import { useToast } from '@ui/use-toast';
 
 interface IFeedbackForm {
   openModal: boolean;
@@ -13,6 +13,7 @@ interface IFeedbackForm {
 
 const FeedbackForm: FC<IFeedbackForm> = (props) => {
   const { openModal = false, handleModal } = props;
+  const { toast } = useToast();
   const [formValues, setFormValues] = useState({
     fullName: "",
     emailId: "",
@@ -38,7 +39,17 @@ const FeedbackForm: FC<IFeedbackForm> = (props) => {
       subject: "",
       message: "",
     })
-    console.log(formValues);
+    // console.log(formValues);
+    if (Object.values(formValues).every((val: string) => val !== "")) {
+      toast({
+        title: `${labels.feedbackTitle} ${formValues?.fullName} 🤩🤝`,
+        description: labels.feedbackDescription,
+      })
+    } else {
+      toast({
+        description: labels.noFeedbackProvided,
+      })
+    }
   }
 
   return (

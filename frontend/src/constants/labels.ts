@@ -1,6 +1,9 @@
 
 export const btnLabel = {
   feedback: 'Feedback',
+  backToHome: 'Back To Home',
+  shuffle: 'Shuffle',
+  addToLibrary: 'Add To Library'
 }
 
 export const placeholder = {
@@ -28,8 +31,10 @@ export const labels = {
   description: 'Description',
   pleaseProvideFeedback: 'Please provide your feedback to improve our application.',
   feedbackForm: 'Feedback Form',
-  feedbackTitle: 'Thank You for Your Feedback',
-  feedbackDescription: 'We appreciate your valuable input in helping us improve our services.'
+  feedbackTitle: 'Thank you for sharing your feedback',
+  feedbackDescription: 'Your valuable input helps us enhance our application to make it even more user- friendly',
+  pageNotFound: 'Page Not Found',
+  noFeedbackProvided: 'No Feedback is provided 🥲',
 }
 
 export const headline = {

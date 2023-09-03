@@ -12,7 +12,7 @@ const GenreTabs: FC<IGenreTabs> = (props) => {
   const { genres } = props;
 
   return (
-    <div className='container text-white '>
+    <div className='container text-white'>
       <p className='font-semibold text-green-500 text-lg my-8'>{labels.songs}</p>
       <Tabs defaultValue={keys.all} className="">
         <TabsList className='bg-gradient-to-r from-green-500 to-green-600 text-primary mb-4'>

@@ -46,3 +46,18 @@ export const fetchData = async (dispatch: Dispatch<Action>) => {
     console.error(error);
   }
 };
+
+export const fetchPlaylist = async (dispatch: Dispatch<Action>, slug: string) => {
+  try {
+    const response = await axiosInstence.get(`/album/${slug}`);
+
+    if (response.status === 200) {
+      dispatch({
+        type: ActionType.FETCH_PLAYLIST,
+        payload: response.data,
+      })
+    }
+  } catch (error) {
+    console.error(error);
+  }
+} 

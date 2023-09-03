@@ -1,10 +1,8 @@
-export { default as AlbumDetails } from './AlbumDetails';
 export { default as AudioPlayer } from './AudioPlayer';
-export { default as FaqSection } from './FaqSection';
-export { default as FeedbackForm } from './FeedbackForm';
 export { default as Hero } from './Hero';
-export { default as SongsTable } from './SongsTable';
 export { default as AlbumsCollapse } from './AlbumsCollapse';
 export { default as AlbumsCarousel } from './AlbumsCarousel';
 export { default as GenreTabs } from './GenreTabs';
 export { default as FaqAccordion } from './FaqAccordion';
+export { default as PlaylistCard } from './PlaylistCard';
+export { default as SongsPlayList } from './SongsPlayList';

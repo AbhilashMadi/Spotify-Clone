@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "@app": path.resolve(__dirname,"./src/App.tsx"),
       "@ui": path.resolve(__dirname, "./src/components/ui"),
       "@sections": path.resolve(__dirname, "./src/components/sections/index.ts"),
       "@atoms": path.resolve(__dirname, "./src/components/atoms/index.ts"),
